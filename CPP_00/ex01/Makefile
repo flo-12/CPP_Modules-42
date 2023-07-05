@@ -21,7 +21,7 @@ $(NAME): $(OBJ) $(HEADER)
 	@$(CC) $(OBJ) -o $(NAME)
 	@echo "\n\t\033[33;1;3m$(NAME) ready\033[0m\n"
 
-$(OBJDIR)/%.o: $(SRC) $(HEADER)
+$(OBJDIR)/%.o: %.cpp $(HEADER)
 	@mkdir -p $(dir $@)
 	@$(CC) $(FLAGS) -c $< -o $@
 
