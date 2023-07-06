@@ -1,7 +1,7 @@
 
 
 # Executable name
-NAME		= Zombie
+NAME		= BraiiiiiiinnnzzzZ
 
 # Compiler
 CC			= c++

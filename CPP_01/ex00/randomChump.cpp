@@ -5,16 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbecht <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 15:08:15 by fbecht            #+#    #+#             */
-/*   Updated: 2023/07/03 15:08:17 by fbecht           ###   ########.fr       */
+/*   Created: 2023/07/06 11:45:44 by fbecht            #+#    #+#             */
+/*   Updated: 2023/07/06 11:45:45 by fbecht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	randomChump(std::string name)
+/* randomChump:
+*	Creates a zombie, names it and the zombie
+*	announces himself.
+*/
+void	randomChump( std::string name )
 {
-	Zombie	z(name);
+	Zombie	zombie(name);
 
-	z.announce();
+	zombie.announce();
 }

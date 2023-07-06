@@ -5,32 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbecht <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 15:07:49 by fbecht            #+#    #+#             */
-/*   Updated: 2023/07/03 15:07:52 by fbecht           ###   ########.fr       */
+/*   Created: 2023/07/06 11:45:00 by fbecht            #+#    #+#             */
+/*   Updated: 2023/07/06 11:45:01 by fbecht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main(void)
+int	main()
 {
-	std::string	name;
+	std::string	input;
 
-	std::cout << "Creating zombie on the stack." << std::endl;
-	std::cout << "Zombie name: " << std::flush;
-	std::cin >> name;
+	std::cout << "Creating zombie on the stack..." << std::endl;
+	std::cout << "Please enter the name: " << std::flush;
+	std::cin >> input;
 
-	Zombie	zombi1(name);
+	Zombie	zombie1(input);
+	zombie1.announce();
 
-	std::cout << "Creating zombie on the heap." << std::endl;
-	std::cout << "Zombie name: " << std::flush;
-	std::cin >> name;
+	std::cout << std::endl << "Create a zombie on the heap" << std::endl;
+	std::cout << "Please enter the name: " << std::flush;
+	std::cin >> input;
 
-	Zombie	*zombi2 = newZombie(name);
-	zombi2->announce();
-	delete zombi2;
+	Zombie	*zombie2 = newZombie(input);
+	zombie2->announce();
+	delete zombie2;
 
-	std::cout << "Calling randomChump(unicorn)." << std::endl;
-	randomChump("unicorn");
+	std::cout << std::endl << "Calling randomChump(<name>)" << std::endl;
+	std::cout << "Please enter the name: " << std::flush;
+	std::cin >> input;
+
+	randomChump(input);
+
+	std::cout << std::endl;
+
 	return (0);
 }

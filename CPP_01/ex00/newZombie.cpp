@@ -5,14 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbecht <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 15:07:59 by fbecht            #+#    #+#             */
-/*   Updated: 2023/07/03 15:08:01 by fbecht           ###   ########.fr       */
+/*   Created: 2023/07/06 11:45:29 by fbecht            #+#    #+#             */
+/*   Updated: 2023/07/06 11:45:31 by fbecht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie	*newZombie(std::string name)
+/* newZombie:
+*	Creates a zombie, name it and returns it.
+*/
+Zombie*	newZombie( std::string name )
 {
 	return (new Zombie(name));
 }

@@ -5,27 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbecht <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 15:08:24 by fbecht            #+#    #+#             */
-/*   Updated: 2023/07/03 15:08:26 by fbecht           ###   ########.fr       */
+/*   Created: 2023/07/06 11:45:20 by fbecht            #+#    #+#             */
+/*   Updated: 2023/07/06 11:45:22 by fbecht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+/* Zombie (constructor):
+*/
+Zombie::Zombie( std::string name): _name(name)
 {
-	this->_name = name;
-	return ;
+
 }
 
-Zombie::~Zombie(void)
+/* ~Zombie (destructor):
+*	Prints a message with the name of the zombie
+*	for debugging purpose.
+*/
+Zombie::~Zombie()
 {
-	std::cout << "Destructor called" << std::endl;
-	return ;
+	std::cout << this->_name << ": destroyed" << std::endl;
 }
 
-void	Zombie::announce(void)
+/* announce:
+*	Prints out: "<_name>: BraiiiiiiinnnzzzZ..."
+*/
+void	Zombie::announce( void )
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-	return ;
 }
