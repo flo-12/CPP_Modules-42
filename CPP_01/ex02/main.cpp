@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 # include <iostream>
 
 int	main(void)
@@ -19,13 +18,30 @@ int	main(void)
 	std::string	*strPTR = &str;
 	std::string &strREF = str;
 
-	std::cout << "memory address of the string variable: " << &str << std::endl;
-	std::cout << "memory address held by strPTR: " << strPTR << std::endl;
-	std::cout << "memory address held by strREF: " << &strREF << std::endl;
+	std::cout << "PRINTING MEMORY ADDRESSES:" << std::endl;
+	std::cout << "... of the string variable: " << &str << std::endl;
+	std::cout << "... held by strPTR: " << strPTR << std::endl;
+	std::cout << "... held by strREF: " << &strREF << std::endl;
 
-	std::cout << "value of the string variable: " << str << std::endl;
-	std::cout << "value ointed to by strPTR: " << *strPTR << std::endl;
-	std::cout << "value ointed to by strREF: " << strREF << std::endl;
+	std::cout << "PRINTING THE VALUES:" << std::endl;
+	std::cout << "... of the string variable: \"" << str << "\"" << std::endl;
+	std::cout << "... pointed to by strPTR: \"" << *strPTR << "\"" << std::endl;
+	std::cout << "... pointed to by strREF: \"" << strREF << "\"" << std::endl;
+
+	std::cout << std::endl;
+	std::string	str2 = "NEW STRING";
+	strPTR = &str2;
+	strREF = str;
+
+	std::cout << "PRINTING NEW MEMORY ADDRESSES:" << std::endl;
+	std::cout << "... of the string variable: " << &str2 << std::endl;
+	std::cout << "... held by strPTR: " << strPTR << std::endl;
+	std::cout << "... held by strREF: " << &strREF << std::endl;
+
+	std::cout << "PRINTING THE NEW VALUES:" << std::endl;
+	std::cout << "... of the string variable: \"" << str2 << "\"" << std::endl;
+	std::cout << "... pointed to by strPTR: \"" << *strPTR << "\"" << std::endl;
+	std::cout << "... pointed to by strREF: \"" << strREF << "\"" << std::endl;
 
 	return (0);
 }
