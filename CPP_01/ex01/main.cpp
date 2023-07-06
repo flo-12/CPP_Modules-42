@@ -17,17 +17,26 @@ int	main(void)
 	std::string	name;
 	int			N;
 
-	std::cout << "Creating zombie horde." << std::endl;
-	std::cout << "Amount of Zombies in the horde: " << std::flush;
-	std::cin >> N;
-	std::cout << "Zombies' name: " << std::flush;
+	std::cout << "Creating a zombie horde..." << std::endl;
+	std::cout << "Please enter a name: " << std::flush;
 	std::cin >> name;
+	do
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+		std::cout << "Enter the number of zombies: " << std::flush;
+		std::cin >> N;
+	} while (!std::cin.good());
 
-	Zombie	*horde = zombieHorde(N, name);
-
+	std::cout << std::endl << "Zombies are created and announce themselves..." << std::endl;
+	Zombie	*horde = zombieHorde( N, name );
 	for (int i = 0; i < N; i++)
 		horde[i].announce();
 
+	std::cout << std::endl << "Deleting the zombie horde again..." << std::endl;
 	delete [] horde;
+	
+	std::cout << std::endl;
+	
 	return (0);
 }

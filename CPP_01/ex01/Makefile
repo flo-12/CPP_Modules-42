@@ -1,7 +1,7 @@
 
 
 # Executable name
-NAME		= Zombie
+NAME		= MoarBrainz
 
 # Compiler
 CC			= c++
@@ -18,9 +18,9 @@ HEADER		= Zombie.hpp
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-	@echo "Compiling Zombie..."
+	@echo "Compiling $(NAME)..."
 	@$(CC) $(OBJ) -o $(NAME)
-	@echo "\n\t\033[33;1;3mzombie ready\033[0m\n"
+	@echo "\n\t\033[33;1;3m$(NAME) ready\033[0m\n"
 
 $(OBJDIR)/%.o: %.cpp $(HEADER)
 	@mkdir -p $(dir $@)
