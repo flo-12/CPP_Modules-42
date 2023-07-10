@@ -16,7 +16,6 @@ std::ostream	&operator<<(std::ostream &out, const Fixed &val)
 */
 Fixed::Fixed() : _fixedPointNbr( 0 )
 {
-	std::cout << "Default constructor called" << std::endl;
 }
 
 /* Fixed (copy constructor)
@@ -25,8 +24,6 @@ Fixed::Fixed() : _fixedPointNbr( 0 )
 */
 Fixed::Fixed(const Fixed &other)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	
 	this->_fixedPointNbr = other.getRawBits();
 }
 
@@ -36,8 +33,6 @@ Fixed::Fixed(const Fixed &other)
 */
 Fixed::Fixed( const int val )
 {
-	std::cout << "Int constructor called" << std::endl;
-
 	this->_fixedPointNbr = val << _nbrFractionalBits;
 }
 
@@ -47,8 +42,6 @@ Fixed::Fixed( const int val )
 */
 Fixed::Fixed( const float val )
 {
-	std::cout << "Float constructor called" << std::endl;
-
 	// roundf() or type-casting?
 	//this->_fixedPointNbr = static_cast<int>(val * (1 << _nbrFractionalBits));
 	this->_fixedPointNbr = roundf(val * (1 << _nbrFractionalBits));
@@ -59,7 +52,6 @@ Fixed::Fixed( const float val )
 */
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 /* toFloat:
@@ -83,8 +75,6 @@ int	Fixed::toInt( void ) const
 */
 int	Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
-	
 	return ( this->_fixedPointNbr );
 }
 
@@ -93,8 +83,6 @@ int	Fixed::getRawBits( void ) const
 */
 void	Fixed::setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called" << std::endl;
-
 	this->_fixedPointNbr = raw;
 }
 
@@ -104,8 +92,6 @@ void	Fixed::setRawBits( int const raw )
 */
 Fixed&	Fixed::operator=(const Fixed &other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
-
 	if (this == &other)
 		return (*this);
 	this->_fixedPointNbr = other.getRawBits();
