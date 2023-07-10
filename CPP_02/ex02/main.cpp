@@ -34,5 +34,14 @@ int	main()
 	std::cout << "min of e(2) and d(-5.4) -> " << Fixed::min( e, d ) << std::endl;
 	std::cout << "min of d(-5.4) and e(2) -> " << Fixed::min( d, e ) << std::endl;
 
+	std::cout << std::endl << "Test for (Fixed g; g < a; g++)" << std::endl;
+	Fixed	g = 0;
+	while (++g < a)
+		std::cout << "XXXXX g=" << g << std::endl;
+	std::cout << std::endl << "Test for (Fixed g; g < a; ++g)" << std::endl;
+	g = 0;
+	while (g++ < a)
+		std::cout << "XXXXX g=" << g << std::endl;
+
 	return 0;
 }
