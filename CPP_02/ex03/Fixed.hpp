@@ -20,7 +20,7 @@ public:
 	void	setRawBits( int const raw );
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
-	
+
 	Fixed&	operator=(const Fixed &other);
 	Fixed&	operator++();
 	Fixed	operator++(int);
@@ -41,6 +41,8 @@ public:
 	static const Fixed&	min(const Fixed &a, const Fixed &b);
 	static Fixed&		max(Fixed &a, Fixed &b);
 	static const Fixed&	max(const Fixed &a, const Fixed &b);
+
+	static Fixed		abs(const Fixed &val);
 };
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &val);

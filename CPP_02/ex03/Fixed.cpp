@@ -238,7 +238,7 @@ Fixed	Fixed::operator/(const Fixed &b) const
 }
 
 
-//------------------- MAX and MIN -------------------//
+//------------------- MAX, MIN & ABS -------------------//
 
 /* min:
 *	The function min takes as parameters two references
@@ -278,4 +278,14 @@ Fixed&	Fixed::max(Fixed &a, Fixed &b)
 const Fixed&	Fixed::max(const Fixed &a, const Fixed &b)
 {
 	return ( a > b ? a : b );
+}
+
+/* abs:
+*	The function abs takes a reference to a fixed-point
+*	number and returns a new object with the absolut value
+*	of val by multiplying by (-1) if it's negative.
+*/
+Fixed	Fixed::abs(const Fixed &val)
+{
+	return ( (val > Fixed(0) ? val : (val * Fixed(-1))) );
 }
