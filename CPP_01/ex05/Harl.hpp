@@ -14,6 +14,7 @@
 # define HARL_HPP
 
 # include <iostream>
+# include <limits>
 
 class Harl
 {

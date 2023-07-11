@@ -26,7 +26,7 @@ public:
 	File(std::string filename);
 	~File();
 
-	void	replace(std::string search, std::string rep);
+	void	myReplace(std::string search, std::string replace);
 };
 
 

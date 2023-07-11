@@ -1,0 +1,5 @@
+Hello evaluator,
+this is a message for you.
+I want to replace "evaluator" by "Peer".
+So the *.replace file will look weird, because we won't see the "evaluator" anymore.
+But enjoy playing around with it by yourself :-)

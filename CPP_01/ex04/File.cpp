@@ -23,7 +23,7 @@ File::~File()
 	return ;
 }
 
-void	File::replace(std::string search, std::string rep)
+void	File::myReplace(std::string search, std::string replace)
 {
 	std::ifstream   inputFile(this->_inFile.c_str());
 	std::string		content;
@@ -38,19 +38,19 @@ void	File::replace(std::string search, std::string rep)
 			while (pos != std::string::npos)
 			{
 				content.erase(pos, search.length());
-				content.insert(pos, rep);
+				content.insert(pos, replace);
 				pos = content.find(search);
 			}
 			outputFile << content;
 			outputFile.close();
 		}
 		else
-			std::cerr << this->_inFile << " is an empty file." << std::endl;
+			std::cerr << "\"" << this->_inFile << "\" is an empty file. No *.replace file is created." << std::endl;
 		inputFile.close();
 	}
 	else
 	{
-		std::cerr << "Unable to open file " << this->_inFile << "." << std::endl;
+		std::cerr << "Unable to open file \"" << this->_inFile << "\"." << std::endl;
 		exit(EXIT_FAILURE);
 	}
 }

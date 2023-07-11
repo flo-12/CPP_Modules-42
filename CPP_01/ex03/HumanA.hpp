@@ -26,6 +26,7 @@ public:
 	~HumanA();
 
 	void	attack(void);
+	void	setWeapon(Weapon &weapon);
 };
 
 #endif

@@ -21,7 +21,14 @@ int	main()
 	{
 		std::cout << "Enter a level: ";
 		std::cin >> input;
-		harl.complain(input);
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+			std::cout << "Something with the input went wrong. Try again..." << std::endl;
+		}
+		else
+			harl.complain(input);
 	} while (input.compare("exit"));
 	return (1);
 }

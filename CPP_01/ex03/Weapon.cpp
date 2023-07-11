@@ -20,7 +20,7 @@ Weapon::Weapon(std::string type)
 
 Weapon::~Weapon(void)
 {
-	std::cout << "Destroyed Weapon type " << this->_type << std::endl;
+	std::cout << "Destroyed Weapon type \"" << this->_type << "\"" << std::endl;
 	return ;
 }
 
