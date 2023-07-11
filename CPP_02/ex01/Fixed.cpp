@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fbecht <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/11 17:48:46 by fbecht            #+#    #+#             */
+/*   Updated: 2023/07/11 17:48:48 by fbecht           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 /* operator<<:
@@ -49,8 +61,6 @@ Fixed::Fixed( const float val )
 {
 	std::cout << "Float constructor called" << std::endl;
 
-	// roundf() or type-casting?
-	//this->_fixedPointNbr = static_cast<int>(val * (1 << _nbrFractionalBits));
 	this->_fixedPointNbr = roundf(val * (1 << _nbrFractionalBits));
 }
 
