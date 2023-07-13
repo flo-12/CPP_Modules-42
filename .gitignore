@@ -1,0 +1,4 @@
+*/.objFiles/*
+*/.objFiles
+*.o
+*/*.o
