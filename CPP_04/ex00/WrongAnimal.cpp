@@ -7,11 +7,6 @@ WrongAnimal::WrongAnimal(/* args */)
 	std::cout << "[WrongAnimal] Default constructor called." << std::endl;
 }
 
-WrongAnimal::WrongAnimal( std::string type ) : _type( type )
-{
-	std::cout << "[WrongAnimal] Default constructor called (set name)." << std::endl;
-}
-
 WrongAnimal::WrongAnimal( const WrongAnimal &other )
 {
 	std::cout << "[WrongAnimal] Copy constructor called." << std::endl;

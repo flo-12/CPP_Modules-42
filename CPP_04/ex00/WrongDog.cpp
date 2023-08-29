@@ -2,8 +2,9 @@
 
 //------------ ORTHODOX CANONICAL FORM ------------//
 
-WrongDog::WrongDog(/* args */) : WrongAnimal ( "WrongDog" )
+WrongDog::WrongDog( ) : WrongAnimal ( )
 {
+	this->_type = "WrongDog";
 	std::cout << "[WrongDog] Default constructor called." << std::endl;
 }
 

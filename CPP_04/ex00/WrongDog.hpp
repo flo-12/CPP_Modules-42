@@ -7,9 +7,9 @@
 class WrongDog: public WrongAnimal
 {
 private:
-	/* data */
+	
 public:
-	WrongDog(/* args */);
+	WrongDog( );
 	WrongDog( const WrongDog &other );
 	~WrongDog();
 	WrongDog&	operator=( const WrongDog &other );

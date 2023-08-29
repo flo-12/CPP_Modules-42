@@ -2,13 +2,14 @@
 
 //------------ ORTHODOX CANONICAL FORM ------------//
 
-Cat::Cat( ) : Animal( )
+Cat::Cat( ) : AAnimal( )
 {
 	this->_type = "Cat";
+	this->_brain = new Brain();
 	std::cout << "[Cat] Default constructor called." << std::endl;
 }
 
-Cat::Cat( const Cat &other ) : Animal( other )
+Cat::Cat( const Cat &other ) : AAnimal( other )
 {
 	std::cout << "[Cat] Copy constructor called." << std::endl;
 	*this = other;
@@ -16,6 +17,7 @@ Cat::Cat( const Cat &other ) : Animal( other )
 
 Cat::~Cat()
 {
+	delete this->_brain;
 	std::cout << "[Cat] Default destructor called." << std::endl;
 }
 
@@ -26,6 +28,7 @@ Cat&	Cat::operator=( const Cat &other )
 		return *this;
 	
 	this->_type = other._type;
+	this->_brain = new Brain( *other._brain );
 	return *this;
 }
 
