@@ -7,7 +7,7 @@
 class Cure : public AMateria
 {
 private:
-	/* data */
+	
 public:
 	Cure();
 	Cure( const Cure &other );

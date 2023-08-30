@@ -2,14 +2,17 @@
 # define CHARACTER_HPP
 
 # include <iostream>
-# include <ICharacter.hpp>
+# include "ICharacter.hpp"
 
 class Character : public ICharacter
 {
 private:
-	
+	std::string	_name;
+	AMateria	*_materia[4];
+
 public:
 	Character();
+	Character( std::string name );
 	Character( const Character &other );
 	~Character();
 	Character&	operator=( const Character &other );
