@@ -1,7 +1,7 @@
 
 
 # Executable name
-NAME		= Polymorphism
+NAME		= Bureaucrat
 
 # Compiler
 CC			= c++
