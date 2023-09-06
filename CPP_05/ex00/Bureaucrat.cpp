@@ -16,20 +16,23 @@
 
 Bureaucrat::Bureaucrat( ) : _name("default"), _grade(5)
 {
-	//std::cout << "Created Default Bureaucrat (name: " << _name << ", grade: " << _grade << ")" << std::endl;
 }
 
 Bureaucrat::Bureaucrat( const std::string name, const int grade ) : _name(name), _grade(grade)
 {
 	if ( this->_grade < 1 )
 		throw Bureaucrat::GradeTooHighException();
-	else if ( this->_grade > 155 )
+	else if ( this->_grade > 150 )
 		throw Bureaucrat::GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat &other )
+Bureaucrat::Bureaucrat( const Bureaucrat &other ) :
+		_name(other._name), _grade(other._grade)
 {
-	*this = other;
+	if ( this->_grade < 1 )
+		throw Bureaucrat::GradeTooHighException();
+	else if ( this->_grade > 150 )
+		throw Bureaucrat::GradeTooLowException();
 }
 
 Bureaucrat::~Bureaucrat()

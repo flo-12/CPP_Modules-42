@@ -47,7 +47,7 @@ int	main()
 
 	try
 	{
-		Bureaucrat	p4( "Jose", 155 );
+		Bureaucrat	p4( "Jose", 150 );
 		std::cout << p4 << std::endl;
 		p4.decGrade();
 		std::cout << p4 << std::endl;
