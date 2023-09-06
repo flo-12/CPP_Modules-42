@@ -23,9 +23,17 @@ private:
 	int					_grade;
 public:
 	Bureaucrat();
+	Bureaucrat( const std::string name, const int grade );
 	Bureaucrat( const Bureaucrat &other );
 	~Bureaucrat();
 	Bureaucrat&	operator=( const Bureaucrat &other );
+
+	class GradeTooHighException : public std::exception	{
+		virtual const char* what() const throw();
+	};
+	class GradeTooLowException : public std::exception	{
+		virtual const char* what() const throw();
+	};
 
 	std::string	getName() const;
 	int			getGrade() const;
@@ -34,16 +42,7 @@ public:
 	void		decGrade();
 };
 
-std::ofstream	operator<<( const Bureaucrat lame );
-
-Bureaucrat::Bureaucrat( ) : _name("default"), _grade(50)
-{
-	std::cout << "Created Default Bureaucrat (name: " << _name << ", grade: " << _grade << ")" << std::endl;
-}
-
-Bureaucrat::~Bureaucrat()
-{
-}
+std::ostream&	operator<<( std::ostream &out, const Bureaucrat &bureau );
 
 
 #endif
