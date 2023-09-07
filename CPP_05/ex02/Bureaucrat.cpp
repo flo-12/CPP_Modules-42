@@ -104,6 +104,21 @@ void	Bureaucrat::signForm( AForm &form ) const
 	
 }
 
+void	Bureaucrat::executeForm( AForm const &form ) const
+{
+	try
+	{
+		form.execute( *this );
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "Execution of " << form.getName() << " from " << _name << " failed due to: ";
+		std::cerr << e.what() << std::endl;
+	}
+	
+	
+}
 
 //---------------- PRINT OVERLOAD ----------------//
 

@@ -51,6 +51,11 @@ const char* AForm::GradeTooLowException::what() const throw()
 	return "FormException: Grade too Low";
 }
 
+const char*	AForm::UnsignedFormException::what() const throw()
+{
+	return "FormException: Unsigned Form";
+}
+
 
 //------------- GET- & SET-FUNCTIONS -------------//
 
@@ -80,6 +85,7 @@ void	AForm::setSigned( const bool s )
 }
 
 
+
 //--------------- MEMBER FUNCTIONS ---------------//
 
 void	AForm::beSigned( const Bureaucrat &bureau )
@@ -88,6 +94,16 @@ void	AForm::beSigned( const Bureaucrat &bureau )
 		this->_signed = true;
 	else
 		throw AForm::GradeTooLowException();
+}
+
+void	AForm::execute( Bureaucrat const & executor ) const
+{
+	//std::cout << "*******getGrade=" << executor.getGrade() << "  compare=" << _gradeSign << std::endl;
+	if ( executor.getGrade() > this->_gradeExec )
+		throw AForm::GradeTooLowException();
+	else if ( !this->_signed )
+		throw AForm::UnsignedFormException();
+	//std::cout << "--------- weird" << std::endl;
 }
 
 

@@ -35,4 +35,10 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=( const PresidentialPar
 
 //--------------- MEMBER FUNCTIONS ---------------//
 
+void	PresidentialPardonForm::execute( Bureaucrat const & executor ) const
+{
+	AForm::execute( executor );
+	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+}
+
 //--------------- OVERLOAD INSERTION --------------//
