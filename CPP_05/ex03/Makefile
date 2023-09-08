@@ -1,7 +1,7 @@
 
 
 # Executable name
-NAME		= 28B
+NAME		= Intern
 
 # Compiler
 CC			= c++
@@ -9,7 +9,7 @@ FLAGS		= -Wextra -Wall -Werror -std=c++98
 
 # Sources & Objects
 OBJDIR		= .objFiles
-SRC_FILES	= main2 Bureaucrat AForm ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm Intern
+SRC_FILES	= main Bureaucrat AForm ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm Intern
 SRC			= $(SRC_FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(SRC_FILES:=.o))
 HEADER		= Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
