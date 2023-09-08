@@ -4,6 +4,8 @@
 # include <iostream>
 # include <cstdlib>
 # include <string>
+# include <cctype>
+
 
 enum e_inputType {
 	NONE,
@@ -15,6 +17,7 @@ enum e_inputType {
 	IMPOSSIBLE
 } ;
 
+
 class ScalarConverter
 {
 private:
@@ -24,8 +27,16 @@ private:
 	float		_f;
 	int			_i;
 
+	bool		_isChar( const std::string str ) const;
+	bool		_isInt( const std::string str ) const;
+	bool		_isDouble( const std::string str ) const;
+	bool		_isFloat( const std::string str ) const;
+	bool		_isLiteral( const std::string str ) const;
+
 	e_inputType	_findInputType( const std::string str ) const;
 	void		_setInputType( const e_inputType type );
+	
+	void		_setValues( const std::string str );
 
 public:
 	ScalarConverter();

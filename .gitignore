@@ -2,3 +2,4 @@
 */.objFiles
 *.o
 */*.o
+*/.vscode/*
